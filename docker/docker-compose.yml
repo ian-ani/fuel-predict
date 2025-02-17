@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  fuel_prediction:
+    container_name: fuel
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./src:/app/src"
+      - "./api:/app/api"
+    ports:
+      - "8080:8080"
