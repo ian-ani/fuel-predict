@@ -5,13 +5,160 @@
 }
 
 body {
-    background-color: red;
+    background-color: #273346;
     margin: 0 auto;
-    height: 100vh;
-    width: 80vh;
+    font-family: sans-serif, Verdana, 'Lucida Sans Unicode', 'Lucida Sans';
+    color: #fff;
 }
 
-form {
+#content {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
 
+#content aside {
+    height: 100vh;
+    width: 20%;
+    background-color: rgb(36, 146, 201);
+    border-right: 1px solid rgb(243, 99, 66);
+}
 
+#content aside img {
+    margin: 2%;
+    height: 25%;
+    width: 96%;
+}
+
+#content aside ul li {
+    margin: 2%;
+    padding: 2%;
+    border: 1px solid;
+    text-align: center;
+    background-color: #5fc7e1;
+    list-style: none;
+}
+
+#content aside ul li:hover {
+    background-color: rgb(243, 99, 66);
+    cursor: pointer;
+}
+
+#content aside ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#principal header {
+    margin-top: 2%;
+    color: rgb(243, 99, 66);
+}
+
+#principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #273346;
+    width: 80%;
+}
+
+#principal main {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: #2492c9;
+    gap: 5%;
+    padding: 2%;
+    margin: 2%;
+    width: 80%;
+    height: 80%;
+    border: 1px #fff solid;
+    box-shadow: 10px 10px rgb(243, 99, 66);
+    overflow-block: auto;
+}
+
+#principal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(36, 146, 201);
+    gap: 5%;
+    margin: 5%;
+    width: 60%;
+    height: 70%;
+    border: 1px #fff solid;
+    box-shadow: 10px 10px rgb(243, 99, 66);
+    overflow-block: auto;
+}
+
+#principal form label {
+    font-size: larger;
+}
+
+#principal form input, select {
+    width: 25%;
+    padding: 1%;
+}
+
+#principal form output {
+    background-color: #ffffff;
+    border: 1px solid rgb(143, 143, 157);
+    min-height: 6%;
+    width: 60%;
+    padding: 1%;
+    text-align: center;
+    font-size: larger;
+}
+
+#principal button {
+    padding: 1%;
+    min-width: 20%;
+}
+
+@media only screen and (orientation: portrait) {
+    #content {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    #content aside {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        border: none;
+        border-top: 1px solid rgb(243, 99, 66);
+    }
+    #content aside img {
+        display: none;
+    }
+    #content aside ul {
+        display: flex;
+        justify-content: baseline;
+    }
+    #content aside ul li {
+        display: flex;
+        width: 30%;
+        align-items: center;
+    }
+    #principal {
+        width: 100%;
+    }
+    #principal header {
+        position: absolute;
+        top: 0;
+    }
+    #principal main {
+        box-shadow: none;
+        border: none;
+        width: 90%;
+        height: auto;
+        background-color: rgb(36, 146, 201, 0);
+    }
+    #principal main p {
+        font-size: 20%; /* esto esta mal pero tengo que mirarlo */
+    }
 }

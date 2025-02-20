@@ -8,23 +8,44 @@
         <title>PVP</title>
     </head>
     <body>
-        <h1>PVP - Predicción de venta al público (con impuestos)</h1>
-        <form>
-            <label for="get-date">Introduce una fecha:</label>
-            <input type="date" id="get-date">
+        <div id="content">
+            <aside>
+                <img src="sidebar_image.png" alt="">
+                <ul>
+                    <li><a href="index.html">Menú principal</a></li>
+                    <li><a href="pai.html">Predicción del precio antes de impuestos</a></li>
+                    <li><a href="pvp.html">Predicción de venta al público (con impuestos)</a></li>
+                </ul>
+            </aside>
+            <div id="principal">
+                <header>
+                    <h1>PVP - Predicción de venta al público (con impuestos)</h1>
+                </header>
+                <form>
+                    <label for="get-date">Introduce una fecha:</label>
+                    <input type="date" id="get-date">
 
-            <label for="provincias">Elige una provincia:</label>
-            <select name="provincias" id="get-provincias">
+                    <label for="provincias">Elige una provincia:</label>
+                    <select name="provincias" id="get-provincias">
+                    </select>
 
-            </select>
+                    <label for="combustible">Elige el tipo de combustible:</label>
+                    <select name="combustible" id="get-combustible">
+                        <option value="0">Gasolina 95 E5</option>
+                        <option value="1">Gasolina 98 E5</option>
+                        <option value="2">Gasóleo A habitual</option>
+                        <option value="3">Gasóleo Premium</option>
+                    </select>
 
-            <label for="prediction">Resultado de la predicción:</label>
-            <output name="output" for="prediction" id="output-prediction"></output>
-        </form>
-        <button>Predecir</button>
+                    <label for="prediction">Resultado de la predicción:</label>
+                    <output name="output" for="prediction" id="output-prediction"></output>
+                    <button>Predecir</button>
+                </form>
+            </div>
+        </div>
         <script type="text/javascript">
             var select_elem = document.getElementById("get-provincias");
-  
+    
             fetch("data/provincias.json")
                 .then(response => response.json())
                 .then(result => {
