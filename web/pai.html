@@ -3,46 +3,44 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap+Condensed">
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
         <link rel="stylesheet" href="styles.css">
         <title>PAI</title>
     </head>
     <body>
-        <div id="content">
-            <aside>
-                <img src="sidebar_image.png" alt="">
+        <header>
+            <h1>Predicción antes de impuestos</h1>
+            <nav>
                 <ul>
                     <li><a href="index.html">Menú principal</a></li>
-                    <li><a href="pai.html">Predicción del precio antes de impuestos</a></li>
-                    <li><a href="pvp.html">Predicción de venta al público (con impuestos)</a></li>
+                    <li class="active"><a href="pai.html">Predicción de PAI</a></li>
+                    <li><a href="pvp.html">Predicción de PVP</a></li>
                 </ul>
-            </aside>
-            <div id="principal">
-                <header>
-                    <h1>PAI - Predicción del precio antes de impuestos</h1>
-                </header>
-                <form>
-                    <label for="get-date">Introduce una fecha:</label>
-                    <input type="date" id="get-date">
+            </nav>
+        </header>
+        <main>
+            <form>
+                <label for="get-date">Introduce una fecha:</label>
+                <input type="date" id="get-date">
 
-                    <label for="provincias">Elige una provincia:</label>
-                    <select name="provincias" id="get-provincias">
-                    </select>
+                <label for="provincias">Elige una provincia:</label>
+                <select name="provincias" id="get-provincias">
+                </select>
 
-                    <label for="combustible">Elige el tipo de combustible:</label>
-                    <select name="combustible" id="get-combustible">
-                        <option value="0">Gasolina 95 E5</option>
-                        <option value="1">Gasolina 98 E5</option>
-                        <option value="2">Gasóleo A habitual</option>
-                        <option value="3">Gasóleo Premium</option>
-                    </select>
+                <label for="combustible">Elige el tipo de combustible:</label>
+                <select name="combustible" id="get-combustible">
+                    <option value="0">Gasolina 95 E5</option>
+                    <option value="1">Gasolina 98 E5</option>
+                    <option value="2">Gasóleo A habitual</option>
+                    <option value="3">Gasóleo Premium</option>
+                </select>
 
-                    <label for="prediction">Resultado de la predicción:</label>
-                    <output name="output" for="prediction" id="output-prediction"></output>
-                    <button>Predecir</button>
-                </form>
-            </div>
-        </div>
+                <label for="prediction">Resultado de la predicción:</label>
+                <p name="prediction" id="prediction"></p>
+                <button>Predecir</button>
+            </form>
+        </main>
         <script type="text/javascript">
             var select_elem = document.getElementById("get-provincias");
   
