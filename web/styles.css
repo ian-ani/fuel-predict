@@ -5,20 +5,24 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
-    font-family: sans-serif, Verdana, 'Lucida Sans Unicode', 'Lucida Sans';
-    color: #fff;
+    background-color: #333;
+    background-image: url(images/garage_floor.jpg);
     font-family: "Asap Condensed", serif;
+    color: #fff;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    width: 100vh;
-    position: absolute;
+    align-items: center;
+    justify-content: space-between; 
     top: 0;
     width: 100%;
+    height: 10vh;
     background-color: #111;
     border-bottom: 1px solid rgb(236, 7, 3);
 }
@@ -73,12 +77,12 @@ nav ul li a {
 }
 
 main {
-    background-image: url(images/garage_floor.jpg);
+    /* background-image: url(images/garage_floor.jpg); */
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 form {
@@ -89,9 +93,8 @@ form {
     background: rgb(17,17,17);
     background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(68,68,68,1) 100%);
     gap: 5%;
-    margin: 5%;
-    width: 60%;
-    height: 100%;
+    width: 50%;
+    height: 90%;
     border: 1px rgb(236, 7, 3) solid;
     box-shadow: 20px 20px 50px rgb(236, 7, 3);
     overflow-block: auto;
@@ -101,7 +104,7 @@ form label {
     font-size: larger;
 }
 
-form input, select {
+form input, select, button {
     width: 25%;
     padding: 1%;
 }
@@ -116,7 +119,7 @@ form input, select {
     font-size: larger;
 }
 
-button {
+#button-ok {
     padding: 1%;
     width: 25%;
 }
@@ -145,20 +148,20 @@ button {
         object-position: 20% 75%; /* cuando tenga otra foto puedo cambiar esto */
     }
     form {
-        margin-top: 10vh;
+        /* margin-top: 10vh; */
         width: 90%;
         box-shadow: none;
     }
-    form input, select {
+    form input, select, button, #prediction {
         width: 25vh;
         max-width: 95%;
     }
-    #prediction {
+    /* #prediction {
         width: 25vh;
         max-width: 95%;
-    }
-    form button {
+    } */
+    /* form button {
         width: 25vh;
         max-width: 95%;
-    }
+    } */
 }

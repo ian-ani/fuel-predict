@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap+Condensed">
         <link rel="icon" type="image/x-icon" href="images/favicon.png">
         <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
         <title>PVP</title>
     </head>
     <body>
@@ -24,7 +25,7 @@
                 <label for="get-date">Introduce una fecha:</label>
                 <input type="date" id="get-date">
 
-                <label for="provincias">Elige una provincia:</label>
+                <label for="provincias">Elige una provincia:</label> <!-- hay que cambiar el json -->
                 <select name="provincias" id="get-provincias">
                 </select>
 
@@ -38,20 +39,20 @@
 
                 <label for="prediction">Resultado de la predicción:</label>
                 <p name="prediction" id="prediction"></p>
-                <button>Predecir</button>
+                <input id="button-ok" type="button" value="Predecir" onclick="getInputs()">
             </form>
         </main>
         <script type="text/javascript">
-            var select_elem = document.getElementById("get-provincias");
+            let select_elem = document.getElementById("get-provincias");
   
             fetch("data/provincias.json")
                 .then(response => response.json())
                 .then(result => {
-                    Object.keys(result).forEach(provincia => {
-                    var option = document.createElement("option");
+                    Object.entries(result).forEach(provincia => { // esta cogiendo solo las claves del json
+                    let option = document.createElement("option");
 
-                    option.value = provincia; // son los valores categoricos ver si hay que pasar a numericos aqui o en el modelo
-                    option.textContent = provincia;
+                    option.textContent = provincia[0]; // nombre (clave)
+                    option.value = provincia[1]; // valor
                     select_elem.appendChild(option);
                     });
                 })
