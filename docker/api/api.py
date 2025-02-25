@@ -1,11 +1,13 @@
 import uvicorn
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from src import predict as pred
 import logging
 
 logging.basicConfig(level=logging.INFO)
 
+#pydantic
 class PredictionData(BaseModel):
     year: int
     month: int
@@ -15,9 +17,21 @@ class PredictionData(BaseModel):
 
 app = FastAPI()
 
+origins = [
+    "*"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+
 @app.get("/")
 def index():
-    return {"message": "Fuel prediction prices in Spain"}
+    return {"message": "Predicción de los precios del combustible en España."}
 
 @app.post("/predict/pai")
 def predict_pai_model(data:PredictionData):
@@ -32,8 +46,10 @@ def predict_pai_model(data:PredictionData):
     if prediction == None:
         raise HTTPException(
             status_code=500,
-            detail="Ha habido un error con la predicción. Inténtelo de nuevo más tarde."
+            detail="Error al predecir los datos. Prueba de nuevo más tarde."
         )
+    
+    logging.info(f"La predicción se ha efectuado correctamente. Resultado: {prediction[0]}")
 
     return {
         "prediction": prediction[0]
@@ -47,14 +63,15 @@ def predict_pvp_model(data:PredictionData):
     province = data.province
     fuel_type = data.fuel_type
 
-
     prediction = pred.predict_pvp_model(year, month, day, province, fuel_type)
 
     if prediction == None:
         raise HTTPException(
             status_code=500,
-            detail="Ha habido un error con la predicción. Inténtelo de nuevo más tarde."
+            detail="Error al predecir los datos. Prueba de nuevo más tarde."
         )
+    
+    logging.info(f"La predicción se ha efectuado correctamente. Resultado: {prediction[0]}")
 
     return {
         "prediction": prediction[0]

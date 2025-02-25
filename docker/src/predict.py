@@ -3,11 +3,6 @@ from sklearn.tree import DecisionTreeRegressor
 import os
 import logging
 
-# ------------
-from sklearn.preprocessing import LabelEncoder # no se si este hace falta de momento
-le = LabelEncoder()
-# ------------
-
 logging.basicConfig(level=logging.INFO)
 
 model_folder = "model"

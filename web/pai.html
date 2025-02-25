@@ -25,12 +25,12 @@
                 <label for="get-date">Introduce una fecha:</label>
                 <input type="date" id="get-date">
 
-                <label for="provincias">Elige una provincia:</label> <!-- hay que cambiar el json -->
-                <select name="provincias" id="get-provincias">
+                <label for="provinces">Elige una provincia:</label>
+                <select name="provinces" id="get-provinces">
                 </select>
 
-                <label for="combustible">Elige el tipo de combustible:</label>
-                <select name="combustible" id="get-combustible">
+                <label for="fuel">Elige el tipo de combustible:</label>
+                <select name="fuel" id="get-fuel">
                     <option value="0">Gasolina 95 E5</option>
                     <option value="1">Gasolina 98 E5</option>
                     <option value="2">Gasóleo A habitual</option>
@@ -43,12 +43,12 @@
             </form>
         </main>
         <script type="text/javascript">
-            let select_elem = document.getElementById("get-provincias");
+            let select_elem = document.getElementById("get-provinces");
   
             fetch("data/provincias.json")
                 .then(response => response.json())
                 .then(result => {
-                    Object.entries(result).forEach(provincia => { // esta cogiendo solo las claves del json
+                    Object.entries(result).forEach(provincia => {
                     let option = document.createElement("option");
 
                     option.textContent = provincia[0]; // nombre (clave)

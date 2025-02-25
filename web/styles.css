@@ -60,7 +60,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-#portada {
+#banner {
     max-width: 100%;
     max-height: 100vh;
     display: flex;
@@ -69,7 +69,7 @@ nav ul li a {
     overflow: hidden;
 }
 
-#portada img {
+#banner img {
     display: block;
     object-fit: cover;
     width: 100%;
@@ -77,7 +77,6 @@ nav ul li a {
 }
 
 main {
-    /* background-image: url(images/garage_floor.jpg); */
     width: 100%;
     display: flex;
     align-items: center;
@@ -97,7 +96,7 @@ form {
     height: 90%;
     border: 1px rgb(236, 7, 3) solid;
     box-shadow: 20px 20px 50px rgb(236, 7, 3);
-    overflow-block: auto;
+    overflow-y: auto;
 }
 
 form label {
@@ -111,12 +110,15 @@ form input, select, button {
 
 #prediction {
     background-color: #ffffff;
+    color: #000;
     border: 1px solid rgb(143, 143, 157);
-    height: 5%;
+    min-height: 38px;
+    height: 38px;
     width: 25%;
     padding: 1%;
     text-align: center;
     font-size: larger;
+    font-weight: bold;
 }
 
 #button-ok {
@@ -135,33 +137,26 @@ form input, select, button {
     nav ul {
         justify-content: center;
     }
-    #portada {
-        /* margin: 0;
-        padding: 0; */
+    #banner {
         width: 100%;
         height: 100vh;
     }
-    #portada img {
+    #banner img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: 20% 75%; /* cuando tenga otra foto puedo cambiar esto */
+        object-position: 20% 75%; /* si se cambia la foto de portada */
     }
     form {
-        /* margin-top: 10vh; */
         width: 90%;
         box-shadow: none;
     }
     form input, select, button, #prediction {
         width: 25vh;
         max-width: 95%;
+        font-size: 125%;
     }
-    /* #prediction {
-        width: 25vh;
-        max-width: 95%;
-    } */
-    /* form button {
-        width: 25vh;
-        max-width: 95%;
-    } */
+    form label {
+        font-size: 125%;
+    }
 }

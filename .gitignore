@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 __pycache__
 raw_dataset.csv
+dataset.csv
 pai_model.pkl
 pvp_model.pkl
