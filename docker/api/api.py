@@ -2,8 +2,9 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from src import predict as pred
 import logging
+
+from src import predict as pred
 
 logging.basicConfig(level=logging.INFO)
 

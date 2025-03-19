@@ -1,8 +1,12 @@
+/*** REINICIO DE PROPIEDADES ***/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*** CUERPO ***/
 
 body {
     display: flex;
@@ -15,6 +19,8 @@ body {
     font-family: "Asap Condensed", serif;
     color: #fff;
 }
+
+/** CABECERA **/
 
 header {
     display: flex;
@@ -59,6 +65,8 @@ nav ul li a {
     color: white;
     text-decoration: none;
 }
+
+/** CONTENIDO **/
 
 #banner {
     max-width: 100%;
@@ -125,6 +133,8 @@ form input, select, button {
     padding: 1%;
     width: 25%;
 }
+
+/*** MEDIA QUERY ***/
 
 @media screen and (width <= 950px) and (orientation: portrait) {
     header {
