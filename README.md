@@ -38,3 +38,7 @@ y los modelos entrenados (en **Pickle**).
 4. Abrir el archivo **index.html** y navegar por la web.
 5. PAI predice el precio del combustible sin impuestos, PVP predice el precio del combustible con impuestos.
 6. Introducir la fecha, provincia y el tipo de combustible.
+
+## Por hacer
+
+- Refactorización del código de Python: hay funciones "repetidas".

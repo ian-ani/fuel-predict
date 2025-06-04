@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es-ES">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap+Condensed">
         <link rel="icon" type="image/x-icon" href="images/favicon.png">
         <link rel="stylesheet" href="styles.css">
-        <script src="scripts.js"></script> 
+        <script src="scripts.js"></script>
         <title>PAI</title>
     </head>
+
     <body>
         <header>
             <h1>Predicción antes de impuestos</h1>
@@ -42,21 +44,12 @@
                 <input id="button-ok" type="button" value="Predecir" onclick="getInputs()">
             </form>
         </main>
-        <script type="text/javascript"> // crea el select de provincias automaticamente
-            let select_elem = document.getElementById("get-provinces");
-  
-            fetch("data/provincias.json")
-                .then(response => response.json())
-                .then(result => {
-                    Object.entries(result).forEach(provincia => {
-                    let option = document.createElement("option");
-
-                    option.textContent = provincia[0]; // nombre (clave)
-                    option.value = provincia[1]; // valor
-                    select_elem.appendChild(option);
-                    });
-                })
-                .catch(error => console.error("No se ha podido cargar el archivo.")); 
+        <script src="scripts.js"></script>
+        <script>
+            addEventListener("DOMContentLoaded", (event) => {
+                createProvinces(); // Crea select de provincias
+            })
         </script>
     </body>
+
 </html>

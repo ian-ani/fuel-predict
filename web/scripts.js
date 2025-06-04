@@ -1,3 +1,24 @@
+// CREACION DEL SELECT DE PROVINCIAS
+
+function createProvinces() {
+    let select_elem = document.getElementById("get-provinces");
+
+    fetch("data/provincias.json")
+        .then(response => response.json())
+        .then(result => {
+            Object.entries(result).forEach(provincia => {
+                let option = document.createElement("option");
+
+                option.textContent = provincia[0]; // nombre (clave)
+                option.value = provincia[1]; // valor
+                select_elem.appendChild(option);
+            });
+        })
+        .catch(error => console.error("No se ha podido cargar el archivo."));
+}
+
+// OBTENER INPUTS
+
 function getInputs() {
     let date = document.getElementById("get-date").value;
     let province = document.getElementById("get-provinces").value;
@@ -15,6 +36,8 @@ function getInputs() {
 
     predict(dict);
 }
+
+// PREDECIR DATOS
 
 function predict(data) {
     let title = document.title; // asi automaticamente coge si pai o pvp
@@ -34,8 +57,9 @@ function predict(data) {
         .then(response => response.json())
         .then(result => {
             let predictionResult = document.getElementById("prediction");
-            
+
             predictionResult.textContent = result.prediction + "€";
         })
         .catch(error => console.error("error", error));
 }
+
