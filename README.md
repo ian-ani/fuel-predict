@@ -35,10 +35,12 @@ para que sea más fácil editar los archivos desde VSCode con el host. Véase **
 y los modelos entrenados (en **Pickle**).
 2. Iniciar el contenedor: `docker-compose up --build`
 3. Ir a **localhost:8080/docs** si se quiere probar la API con [Swagger](https://fastapi.tiangolo.com/tutorial/first-steps/#interactive-api-docs).
-4. Abrir el archivo **index.html** y navegar por la web.
-5. PAI predice el precio del combustible sin impuestos, PVP predice el precio del combustible con impuestos.
-6. Introducir la fecha, provincia y el tipo de combustible.
+4. Dentro del directorio **web**, desde CLI arrancar un servidor HTTP: `python -m http.server 8000`. Es posible que esto no sea necesario si se usa Live Server.
+5. Ir a **localhost:8000** para poder navegar por la web (si no se hace de esta manera no cargará el archivo de **provincias.json** por culpa del CORS).
+6. PAI predice el precio del combustible sin impuestos, PVP predice el precio del combustible con impuestos.
+7. Introducir la fecha, provincia y el tipo de combustible.
 
 ## Por hacer
 
-- Refactorización del código de Python: hay funciones "repetidas".
+- Pasar el directorio **web** a un contenedor de Docker que esté relacionado con el de la API para poder saltar el paso 4.
+- Ordenar mejor los archivos de **web**: guardar CSS y JS en subdirectorios.

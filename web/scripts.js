@@ -1,3 +1,19 @@
+// IMAGEN DE PORTADA
+
+function getImage() {
+    const img = document.querySelector("#banner img");
+
+    // En caso de que img no exista (en pai y pvp no existen, por ejemplo)
+    if (!img) return;
+
+    const cars = ["lanevo6.jpg", "subaru.jpg"];
+    const result = Math.floor(Math.random() * cars.length);
+
+    img.src = `images/${cars[result]}`;
+}
+
+getImage();
+
 // CREACION DEL SELECT DE PROVINCIAS
 
 function createProvinces() {
